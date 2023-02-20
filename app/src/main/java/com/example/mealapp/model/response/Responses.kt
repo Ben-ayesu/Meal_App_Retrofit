@@ -7,7 +7,7 @@ import com.google.gson.annotations.SerializedName
 
 // Classes will not have any logic
 // Called Dummy classes to transport some data
-data class MealsCategoryResponse(val categories: List<MealResponse>)
+data class MealsCategoriesResponse(val categories: List<MealResponse>)
 
 data class MealResponse(
     @SerializedName("idCategory") val id: String,
