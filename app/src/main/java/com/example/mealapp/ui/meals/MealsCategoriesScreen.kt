@@ -29,15 +29,15 @@ import androidx.compose.ui.Alignment.Companion.CenterVertically
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.text.style.TextOverflow
-import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import androidx.lifecycle.viewmodel.compose.viewModel
 import coil.compose.AsyncImage
 import com.example.mealapp.model.response.MealResponse
-import com.example.mealapp.ui.theme.MealAppTheme
 
 @Composable
-fun MealsCategoriesScreen() {
+fun MealsCategoriesScreen(
+    navigationCallBack: (String) -> Unit
+) {
     val viewModel: MealsCategoriesViewModel = viewModel()
 
     //Get mealstate from the viewmodel
@@ -46,7 +46,7 @@ fun MealsCategoriesScreen() {
         contentPadding = PaddingValues(8.dp)
     ) {
         items(meals) { meal ->
-            MealCategory(meal = meal)
+            MealCategory(meal, navigationCallBack)
         }
     }
 
@@ -64,7 +64,10 @@ fun MealsCategoriesScreen() {
 }
 
 @Composable
-fun MealCategory(meal: MealResponse) {
+fun MealCategory(
+    meal: MealResponse,
+    navigationCallBack: (String) -> Unit
+) {
     var isExpanded by remember {
         mutableStateOf(false)
     }
@@ -76,7 +79,14 @@ fun MealCategory(meal: MealResponse) {
         ),
         modifier = Modifier
             .fillMaxWidth()
-            .padding(top = 16.dp)
+            .padding(
+                top = 16.dp,
+                start = 8.dp,
+                end = 8.dp
+            )
+            .clickable {
+                navigationCallBack(meal.id)
+            }
     ) {
         Row(
             modifier = Modifier
@@ -120,13 +130,13 @@ fun MealCategory(meal: MealResponse) {
     }
 }
 
-@Preview(
-    showBackground = true,
-    showSystemUi = true
-)
-@Composable
-fun GreetingPreview() {
-    MealAppTheme {
-        MealsCategoriesScreen()
-    }
-}
+//@Preview(
+//    showBackground = true,
+//    showSystemUi = true
+//)
+//@Composable
+//fun GreetingPreview() {
+//    MealAppTheme {
+//        MealsCategoriesScreen()
+//    }
+//}
