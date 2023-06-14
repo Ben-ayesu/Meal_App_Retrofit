@@ -25,7 +25,7 @@ git clone https://github.com/your-username/meals-app.git
 ## Dependencies
 The following dependencies are used in the app:
 
--Jetpack Compose: A modern UI toolkit for building native Android apps.
+- Jetpack Compose: A modern UI toolkit for building native Android apps.
 -Navigation Compose: A navigation library for Jetpack Compose.
 -MVVM architecture: Used to separate concerns and provide a clear structure to the app.
 -Coroutines: A library for asynchronous programming and managing concurrency.
