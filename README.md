@@ -26,18 +26,18 @@ git clone https://github.com/your-username/meals-app.git
 The following dependencies are used in the app:
 
 - Jetpack Compose: A modern UI toolkit for building native Android apps.
--Navigation Compose: A navigation library for Jetpack Compose.
--MVVM architecture: Used to separate concerns and provide a clear structure to the app.
--Coroutines: A library for asynchronous programming and managing concurrency.
--Coil: An image loading library for Android apps.
--Retrofit: A type-safe HTTP client for Android and Java.Coil: Image Loading Library
+- Navigation Compose: A navigation library for Jetpack Compose.
+- MVVM architecture: Used to separate concerns and provide a clear structure to the app.
+- Coroutines: A library for asynchronous programming and managing concurrency.
+- Coil: An image loading library for Android apps.
+- Retrofit: A type-safe HTTP client for Android and Java.Coil: Image Loading Library
 
 ## Architecture
 The Meals App follows the MVVM (Model-View-ViewModel) architecture pattern. Here's a brief overview of each component:
 
--Model: Represents the data structure and business logic of the app. It includes classes for fetching data from the MealsDatabase API using Retrofit.
--View: Responsible for rendering the UI using Jetpack Compose. It includes classes for displaying the list of meals and the meal detail screen.
--ViewModel: Acts as a bridge between the Model and View components. It holds and manages the UI-related data required by the View and communicates with the Model to fetch data.
+- Model: Represents the data structure and business logic of the app. It includes classes for fetching data from the MealsDatabase API using Retrofit.
+- View: Responsible for rendering the UI using Jetpack Compose. It includes classes for displaying the list of meals and the meal detail screen.
+- ViewModel: Acts as a bridge between the Model and View components. It holds and manages the UI-related data required by the View and communicates with the Model to fetch data.
 
 ## Screenshots
 ![Screenshot_20230225_234615](https://github.com/Ben-ayesu/Meal_App_Retrofit/assets/19813169/72998575-2b6e-4aa8-9d9b-fc4fe696b81f)
